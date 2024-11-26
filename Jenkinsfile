@@ -12,31 +12,31 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the application...'
-                sh './build.sh' // Replace with your build command
+                sh './build.sh' 
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Running unit and integration tests...'
-                sh './run-tests.sh' // Run your test command here
+                sh './run-tests.sh' 
             }
         }
 
         stage('Deploy to Staging') {
             steps {
                 echo 'Deploying to staging environment...'
-                sh './deploy-staging.sh' // Replace with your staging deploy script
+                sh './deploy-staging.sh' 
             }
         }
 
         stage('Deploy to Production') {
             when {
-                branch 'main' // Deploy only from the main branch
+                branch 'main' 
             }
             steps {
                 echo 'Deploying to production environment...'
-                sh './deploy-production.sh' // Replace with your production deploy script
+                sh './deploy-production.sh' 
             }
         }
     }
